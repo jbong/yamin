@@ -7,7 +7,7 @@ A node.js/socket mongoDb UI
 Install
 -------
 
-    $ cd yamin
+    $ cd yamin/src
     $ npm install
 
 Usage
