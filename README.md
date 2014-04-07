@@ -1,8 +1,7 @@
-{ yamin : "yet another mongodb interface }
+{ yamin : "yet another mongodb interface" }
 -----------------------------------------
 
-A node.js/socket mongoDb UI
-
+A node.js/socket MongoDB UI
 
 Install
 -------
