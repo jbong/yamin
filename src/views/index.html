@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="pure-g">
+
+    <div class="pure-u-1-2">
+
+    </div>
+
+    <div class="pure-u-1-2">
+        <div id="main-menu-container">
+            <div class="pure-menu pure-menu-open pure-menu-horizontal">
+                <ul id="main-menu">
+                    <li data-view="serverView" class="pure-menu-selected menu-selected"><a href="#">server</a></li>
+                    <li data-view="adminView"><a href="#">admin</a></li>
+                    <li data-view="crudView" data-sub-view="createSubView"><a href="#">create</a></li>
+                    <li data-view="crudView" data-sub-view="readSubView"><a href="#">read</a></li>
+                    <li data-view="crudView" data-sub-view="updateSubView"><a href="#">update</a></li>
+                    <li data-view="crudView" data-sub-view="deleteSubView"><a href="#">delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-u-1">
+        <div id="view-content">
+            <div id="serverView" class="view-content">
+                <div class="pure-g">
+                    <div class="pure-u-6-24">
+                        <div class="pure-menu pure-menu-open">
+                            <ul id="serverCmdMenu">
+                                <li data-cmd="serverStatus"><a href="#">serverStatus</a></li>
+                                <li data-cmd="buildInfo"><a href="#">buildInfo</a></li>
+                                <li data-cmd="profilingLevel"><a href="#">profilingLevel</a></li>
+                                <li data-cmd="ping"><a href="#">ping</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pure-u-18-24">
+                        <div class="sub-view-content">
+                            <div id="serverAdminCmdResponse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="adminView" class="view-content">
+                <div class="pure-g">
+                    <div class="pure-u-1">
+                        {% include "./include/notImplemented.html" %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="crudView" class="view-content">
+                <div class="pure-g">
+                    <div class="pure-u-6-24">
+                            {% include "./include/databaseList.html" %}
+                            {% include "./include/collectionList.html" %}
+                    </div>
+                    <div class="pure-u-18-24">
+                        <div class="pure-g">
+                            <div class="pure-u-1">
+                                <div class="sub-view-content">
+                                    <div class="cb-box">
+                                        <div id="selectedContainer">
+                                            { database : undefined, collection : undefined }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pure-u-1">
+                                <div class="sub-view-content">
+                                    <div id="createSubView" class="sub-view-pane">
+                                        <div>
+                                            {% include "./include/notImplemented.html" %}
+                                        </div>
+                                    </div>
+                                    <div id="readSubView" class="sub-view-pane">
+                                        <div class="pure-g">
+                                            <div class="pure-u-1-2">
+                                                <div class="cb-box">
+                                                    <p class="cmd-input-label">query</p>
+                                                    <textarea class="cmd-input" id="readQuery">{}</textarea>
+                                                    <p class="cmd-input-label">options</p>
+                                                    <textarea class="cmd-input" id="readOptions">{}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="pure-u-1-2">
+
+                                                <div class="sub-view-pane-right">
+
+                                                    <div class="cb-box">
+                                                        <div id="readCmdButtons">
+                                                            <button data-cmd="find" class="pure-button">find</button>
+                                                            <button data-cmd="findOne" class="pure-button">findOne</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="readCmdResponse">
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="updateSubView" class="sub-view-pane">
+                                        <div>
+                                            {% include "./include/notImplemented.html" %}
+                                        </div>
+                                    </div>
+                                    <div id="deleteSubView" class="sub-view-pane">
+                                        <div>
+                                            {% include "./include/notImplemented.html" %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
